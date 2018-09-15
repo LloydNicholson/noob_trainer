@@ -1,0 +1,1 @@
+draw_sprite(s_title_highlight, selection, x_pos, y_pos);

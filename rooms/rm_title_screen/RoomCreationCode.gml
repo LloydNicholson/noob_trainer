@@ -1,0 +1,1 @@
+audio_play_sound(snd_platformer_main_fast, 10, true);
