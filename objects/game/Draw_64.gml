@@ -52,7 +52,7 @@ if global.lose_game {
 switch room {
 	case rm_rock_paper_scissors:
 		#region RPS level
-		draw_text_ext(10, 10, "YOU KNOW WHAT TO DO, RIGHT?!", 30, 100);
+		draw_text_ext(10, 10, "CHOOSE ROCK, PAPER OR SCISSORS WITH LEFT/RIGHT!", 30, 200);
 		draw_set_halign(fa_center);
 		// Draw timer
 		draw_timer(gui_width/2, gui_height/2, -timer_width/2+5, 0, 1, 0, global.game_timer, global.max_timer);		
@@ -112,11 +112,11 @@ switch room {
 	
 	case rm_dodging: 
 		#region Dodging Room
-		draw_text_ext(10, 10, "PRESS SPACEBAR TO ATTACK. OBVIOUSLY DUDE!", 30, 100);
+		draw_text_ext(10, 10, "WAIT FOR THE BOSS TO FLASH, THEN PRESS SPACE TO ATTACK!", 30, 200);
 		
 		with obj_ChatBoss {
 			if vulnerable <= 150 {
-				draw_text(gui_width/2-50, gui_height/2-90, "GET 'EM!");	
+				draw_text(gui_width/2-50, gui_height/2-90, "ATTACK NOW!");	
 			}
 		}
 		#endregion
@@ -129,20 +129,20 @@ switch room {
 		// Timer
 		draw_timer(20, gui_height, 0, -timer_height/2-20, 1, 0, global.game_timer, global.max_timer);
 
-		draw_text_ext(10, 10, "FIND THE SCREEN. IT'S HIDE AND SEEK! DUH!", 30, 100);
+		draw_text_ext(10, 10, "COLLECT ALL THE ITEMS BEFORE TIME RUNS OUT!", 30, 200);
 		#endregion
 	break;
 	
 	default: 
 		#region Platformer parent level
-	draw_text_ext(10, 10, "FIND THE EXIT. NOOB!", 30, 100);
+	draw_text_ext(10, 10, "REACH THE EXIT IN TIME!", 30, 100);
 	// Draw UI sprites
 	// Timer
 	draw_timer(20, gui_height, 0, -timer_height/2-20, 1, 0, global.game_timer, global.max_timer);
 	
 	draw_set_halign(fa_center);
 	// Death text
-	draw_text(gui_width/2, gui_height-40, "Max deaths: " + string(global.deaths));
+	draw_text(gui_width/2, gui_height-40, "Lives: " + string(global.deaths));
 	draw_set_halign(fa_left);
 	#endregion
 	break;

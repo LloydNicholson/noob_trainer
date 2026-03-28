@@ -14,4 +14,14 @@ global.lose_game = false;
 global.draw_game = false;
 global.game_timer = global.game_speed*global.seconds;
 global.max_timer = global.game_timer;
-death_message = choose("WHAT A NOOB!", "SO DEAD!", "POP!", "HAHA, WHAT A NOOB!", "YOU'RE EMBARASSING YOURSELF", "GIVE UP");
+death_message = choose(
+	"OOPS! TRY AGAIN!",
+	"SO CLOSE... NOT REALLY.",
+	"BOOM! RESPECT THE SPIKES.",
+	"EVERY EXPERT WAS ONCE A NOOB!",
+	"FASTER NEXT TIME!",
+	"THE PLATFORMS AREN'T THAT HARD... RIGHT?",
+	"YOU'LL GET IT!",
+	"KEEP GOING!",
+	"NICE TRY, SERIOUSLY THOUGH!"
+);

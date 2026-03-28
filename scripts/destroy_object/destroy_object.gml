@@ -4,7 +4,7 @@ var object = argument0;
 
 with object {
 	var inst;
-	repeat (7) {
+	repeat (15) {
 		inst = instance_create_layer(x, y, "Instances", o_death_effect);
 	}
 	global.game_timer = 0;
@@ -18,10 +18,7 @@ with object {
 }
 
 with o_death_effect {
-	vspeed_ = random_range(-jump_speed_+4, -jump_speed_);
-	if hspeed_ > 0 {
-		hspeed_ -= 0.5;
-	} else {
-		hspeed_ += 0.5;	
-	}
+	// Negative vspeed launches particles upward; range stays below 0 (min < max numerically)
+	vspeed_ = random_range(-jump_speed_, -jump_speed_ + 3);
+	hspeed_ = random_range(-3, 3);
 }
