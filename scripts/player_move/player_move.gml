@@ -1,17 +1,18 @@
 var hinput = keyboard_check(vk_right) - keyboard_check(vk_left);
 var vinput = keyboard_check(vk_down) - keyboard_check(vk_up);
 
-// Move player left and right
+// Smooth horizontal movement with acceleration and deceleration
+var target_hspeed = hinput * 2;
 if hinput != 0 {
-	if hinput > 0 {
-		hspeed_ = 1;
-	} else {
-		hspeed_ = -1;
-	}
+	hspeed_ = lerp(hspeed_, target_hspeed, 0.25);
 	image_speed = 0.8;
+	image_xscale = hinput; // Flip sprite to face movement direction
 } else {
-	hspeed_ = 0;	
-	image_index = 0;
+	hspeed_ = lerp(hspeed_, 0, 0.35);
+	if abs(hspeed_) < 0.1 {
+		hspeed_ = 0;
+		image_index = 0;
+	}
 }
 
 var inst_x = instance_place(x, y+1, o_closing_solid);
